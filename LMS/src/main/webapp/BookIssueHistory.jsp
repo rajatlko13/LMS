@@ -44,25 +44,25 @@ if(session.getAttribute("adminUsername")==null)
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item ml-5 mr-3">
-        <a class="nav-link" href="${pageContext.request.contextPath}/adminPage">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="adminPage">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item mr-3">
-        <a class="nav-link" href="${pageContext.request.contextPath}/AdminAbout.jsp">About</a>
+        <a class="nav-link" href="AdminAbout.jsp">About</a>
       </li>
        <li class="nav-item mr-3">
-        <a class="nav-link" href="${pageContext.request.contextPath}/AdminEresources.jsp">E-Resources</a>
+        <a class="nav-link" href="AdminEresources.jsp">E-Resources</a>
       </li>
       <li class="nav-item dropdown mr-3">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Details
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="${pageContext.request.contextPath}/bookList"><i class="fa fa-list" aria-hidden="true"></i> Book List</a>    
-          <a class="dropdown-item" href="${pageContext.request.contextPath}/userDetails"><i class="fa fa-user" aria-hidden="true"></i> User Details</a>  
-          <a class="dropdown-item" href="${pageContext.request.contextPath}/individualBookDetails"><i class="fa fa-book" aria-hidden="true"></i> Book Details </a> 
-          <a class="dropdown-item" href="${pageContext.request.contextPath}/bookIssueHistory/1"><i class="fa fa-history" aria-hidden="true"></i> Book Issue History </a> 
-          <a class="dropdown-item" href="${pageContext.request.contextPath}/viewVendor"><i class="fa fa-male" aria-hidden="true"></i> Vendor Details </a>
-          <a class="dropdown-item" href="${pageContext.request.contextPath}/sendReminderMail"><i class="fa fa-envelope" aria-hidden="true"></i> Send Reminder Mail </a>    
+          <a class="dropdown-item" href="bookList"><i class="fa fa-list" aria-hidden="true"></i> Book List</a>    
+          <a class="dropdown-item" href="userDetails"><i class="fa fa-user" aria-hidden="true"></i> User Details</a>  
+          <a class="dropdown-item" href="individualBookDetails"><i class="fa fa-book" aria-hidden="true"></i> Book Details </a> 
+          <a class="dropdown-item" href="bookIssueHistory/1"><i class="fa fa-history" aria-hidden="true"></i> Book Issue History </a> 
+          <a class="dropdown-item" href="viewVendor"><i class="fa fa-male" aria-hidden="true"></i> Vendor Details </a>
+          <a class="dropdown-item" href="sendReminderMail"><i class="fa fa-envelope" aria-hidden="true"></i> Send Reminder Mail </a>    
         </div>
       </li>
       <li class="nav-item dropdown mr-3">
@@ -70,10 +70,10 @@ if(session.getAttribute("adminUsername")==null)
           Manage Books
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">       
-          <a class="dropdown-item" href="${pageContext.request.contextPath}/issueBook"><i class="fa fa-check-square-o" aria-hidden="true"></i> Issue Book</a>
-          <a class="dropdown-item" href="${pageContext.request.contextPath}/returnBook"><i class="fa fa-backward" aria-hidden="true"></i> Return Book</a>
-          <a class="dropdown-item" href="${pageContext.request.contextPath}/viewAddBook"><i class="fa fa-plus-square" aria-hidden="true"></i> Add Books</a>
-          <a class="dropdown-item" href="${pageContext.request.contextPath}/deleteBook"><i class="fa fa-trash" aria-hidden="true"></i> Delete Books</a>
+          <a class="dropdown-item" href="issueBook"><i class="fa fa-check-square-o" aria-hidden="true"></i> Issue Book</a>
+          <a class="dropdown-item" href="returnBook"><i class="fa fa-backward" aria-hidden="true"></i> Return Book</a>
+          <a class="dropdown-item" href="viewAddBook"><i class="fa fa-plus-square" aria-hidden="true"></i> Add Books</a>
+          <a class="dropdown-item" href="deleteBook"><i class="fa fa-trash" aria-hidden="true"></i> Delete Books</a>
         </div>
       </li>
       <li class="nav-item mr-3 mt-1">
@@ -113,7 +113,7 @@ if(session.getAttribute("adminUsername")==null)
 	    </tr>
 	  </thead>
 	  <tbody>
-	  	<c:forEach items="${issueBookHistory}" var="issueHistory">
+	  	<c:forEach items="${sessionScope.issueBookHistory}" var="issueHistory">
 		    <tr>
 		      <td>${issueHistory.getIssueid()}</td>
 		      <td>${issueHistory.getBookid()}</td>
@@ -134,25 +134,25 @@ if(session.getAttribute("adminUsername")==null)
 	  </tbody> 
 	</table>
 	
-	<div class="text-center mb-1 text-primary">Page ${pageNo}</div>
+	<div class="text-center mb-1 text-primary">Page ${sessionScope.pageNo}</div>
 	<div class="container">
 		<div  class="d-flex justify-content-center" >
 		<nav aria-label="Page navigation example">
 		  <ul class="pagination">
-		  	<c:if test="${pageNo == 1}">
+		  	<c:if test="${sessionScope.pageNo == 1}">
 		    	<li class="page-item"><a class="page-link border border-primary text-secondary">Previous</a></li>
 		    </c:if>
-		    <c:if test="${pageNo != 1}">
-		    	<li class="page-item"><a class="page-link border border-primary" href="${pageContext.request.contextPath}/bookIssueHistory/${pageNo - 1}">Previous</a></li>
+		    <c:if test="${sessionScope.pageNo != 1}">
+		    	<li class="page-item"><a class="page-link border border-primary" href="bookIssueHistory/${sessionScope.pageNo - 1}">Previous</a></li>
 		    </c:if>
-		    <c:forEach begin="1" end="${totalPages}" var="page">
-		    	<li class="page-item" id="${page}"><a class="page-link border border-primary" href="${pageContext.request.contextPath}/bookIssueHistory/${page}">${page}</a></li>
+		    <c:forEach begin="1" end="${sessionScope.totalPages}" var="page">
+		    	<li class="page-item" id="${page}"><a class="page-link border border-primary" href="bookIssueHistory/${page}">${page}</a></li>
 		    </c:forEach>
-		    <c:if test="${pageNo == totalPages}">
+		    <c:if test="${sessionScope.pageNo == sessionScope.totalPages}">
 		    	<li class="page-item"><a class="page-link border border-primary text-secondary">Next</a></li>
 		  	</c:if>
-		    <c:if test="${pageNo != totalPages}">
-		    	<li class="page-item"><a class="page-link border border-primary" href="${pageContext.request.contextPath}/bookIssueHistory/${pageNo + 1}">Next</a></li>
+		    <c:if test="${sessionScope.pageNo != sessionScope.totalPages}">
+		    	<li class="page-item"><a class="page-link border border-primary" href="bookIssueHistory/${sessionScope.pageNo + 1}">Next</a></li>
 		  	</c:if>
 		  </ul>
 		</nav>
@@ -160,7 +160,7 @@ if(session.getAttribute("adminUsername")==null)
 	</div>
 </c:if>
 
-<c:if test="${emptyIssueBookHistory != null}">
+<c:if test="${sessionScope.emptyIssueBookHistory != null}">
 	<h3 class="mt-4" style="text-align:center;">No Book Issue Record.</h3>
 </c:if>
 
@@ -170,9 +170,9 @@ if(session.getAttribute("adminUsername")==null)
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<h5>Home</h5>
 					<ul class="list-unstyled quick-links">
-						<li><a href="${pageContext.request.contextPath}/bookList"><i class="fa fa-angle-double-right"></i>Book Collection</a></li>
+						<li><a href="bookList"><i class="fa fa-angle-double-right"></i>Book Collection</a></li>
 						<li><a href="#"><i class="fa fa-angle-double-right"></i>Institute Bulletin</a></li>
-						<li><a href="${pageContext.request.contextPath}/AdminEresources.jsp"><i class="fa fa-angle-double-right"></i>E-Resources</a></li>
+						<li><a href="AdminEresources.jsp"><i class="fa fa-angle-double-right"></i>E-Resources</a></li>
 						<li><a href="" data-toggle="modal" data-target="#contactModal"><i class="fa fa-angle-double-right"></i>Contact</a></li>
 						
 					</ul>
@@ -180,14 +180,14 @@ if(session.getAttribute("adminUsername")==null)
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<h5>Quick links</h5>
 					<ul class="list-unstyled quick-links">
-						<li><a href="${pageContext.request.contextPath}/logout"><i class="fa fa-angle-double-right"></i>Logout</a></li>
-						<li><a href="${pageContext.request.contextPath}/AdminSignupPage.jsp"><i class="fa fa-angle-double-right"></i>Add New Admin</a></li>	
+						<li><a href="logout"><i class="fa fa-angle-double-right"></i>Logout</a></li>
+						<li><a href="AdminSignupPage.jsp"><i class="fa fa-angle-double-right"></i>Add New Admin</a></li>	
 					</ul>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<h5>About Us</h5>
 					<ul class="list-unstyled quick-links">
-						<li><a href="${pageContext.request.contextPath}/AdminKnowLibrary.jsp"><i class="fa fa-angle-double-right"></i>Know Your Library</a></li>
+						<li><a href="AdminKnowLibrary.jsp"><i class="fa fa-angle-double-right"></i>Know Your Library</a></li>
 						<li><a href="#"><i class="fa fa-angle-double-right"></i>Library Brochure</a></li>
 						<li><a href="#"><i class="fa fa-angle-double-right"></i>Library Staff</a></li>
 						<li><a href="#"><i class="fa fa-angle-double-right"></i>FAQs</a></li>
@@ -241,9 +241,11 @@ if(session.getAttribute("adminUsername")==null)
 </div>		
 
 <script>
-	var element = document.getElementById(${pageNo});
+	var element = document.getElementById(${sessionScope.pageNo});
 	element.classList.add("active");
 </script>
+
+
 
 <style type="text/css">
 	section {

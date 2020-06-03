@@ -84,18 +84,12 @@ public class MyController {
 	@Transactional
 	public String studentLogin(@ModelAttribute("theStudent") StudentDetails theStudent, Model theModel) throws Exception 
 	{
-		System.out.println(request.getRequestURI());
-		System.out.println(request.getRequestURL().toString());
+//		System.out.println(request.getRequestURI());
+//		System.out.println(request.getRequestURL().toString());
 		
 		Session currentSession = entityManager.unwrap(Session.class);
 		StudentDetails obj=currentSession.get(StudentDetails.class, theStudent.getUsername());
-		
-		System.out.println("obj= "+obj);
-		
-		if(obj!=null)
-			System.out.println("obj username= "+obj.getUsername());
-		
-		
+				
 		if(obj!=null)
 		{
 			EncryptPassword ep=new EncryptPassword();
@@ -755,8 +749,9 @@ public class MyController {
 
 	@RequestMapping("/bookIssueHistory/{pageNo}")
 	@Transactional
-	public String bookIssueHistoryPagination(@PathVariable("pageNo") int pageNo, Model theModel)
+	public String bookIssueHistoryPagination(@PathVariable("pageNo") int pageNo)
 	{
+		HttpSession session=request.getSession();
 		Session currentSession=entityManager.unwrap(Session.class);
 		
 		@SuppressWarnings("rawtypes")
@@ -765,8 +760,8 @@ public class MyController {
 		int totalPages=(int)Math.ceil(((double)t)/10);
 		System.out.println("t : "+t);
 		System.out.println("totalPages : "+totalPages);
-		theModel.addAttribute("totalPages", totalPages);
-		theModel.addAttribute("pageNo", pageNo);
+		session.setAttribute("totalPages", totalPages);
+		session.setAttribute("pageNo", pageNo);
 		
 		@SuppressWarnings("rawtypes")
 		NativeQuery query2 = currentSession.createSQLQuery("select * from issue_book_history2 limit :limit offset :offset");
@@ -775,12 +770,12 @@ public class MyController {
 		query2.setParameter("offset", 10*(pageNo-1));
 		@SuppressWarnings("unchecked")
 		List<IssueBookHistory2> issueBookHistory2 = query2.getResultList();
-		theModel.addAttribute("issueBookHistory", issueBookHistory2);
+		session.setAttribute("issueBookHistory", issueBookHistory2);
 		
 		if(issueBookHistory2.isEmpty())
-			theModel.addAttribute("EmptyIssueBookHistory", "No records present");
+			session.setAttribute("EmptyIssueBookHistory", "No records present");
 		
-		return "BookIssueHistory";
+		return "redirect:/BookIssueHistory.jsp";
 	}
 
 

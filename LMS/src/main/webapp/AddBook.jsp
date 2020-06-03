@@ -396,7 +396,7 @@ number.onkeydown = function(e)
 <script type="text/javascript">
 	function Redirect()
 	{
-		window.location="http://localhost:8080/LibraryManagementSystem/viewAddBook";
+		window.location="http://localhost:8080/viewAddBook";
 	}	
 </script>
 

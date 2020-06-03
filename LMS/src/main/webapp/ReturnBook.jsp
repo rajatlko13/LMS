@@ -279,7 +279,7 @@ if(session.getAttribute("adminUsername")==null)
 <script type="text/javascript">
 	function Redirect()
 	{
-		window.location="http://localhost:8080/LibraryManagementSystem/returnBook";
+		window.location="http://library-portal.herokuapp.com/returnBook";
 	}	
 </script>
 
