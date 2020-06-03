@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.portal.LMS.entity.AdminDetails;
+import com.portal.LMS.entity.StudentDetails;
 
 @Controller
 public class MyController {
@@ -63,6 +64,100 @@ public class MyController {
 	public String adminPage()
 	{
 		return "AdminPage";
+	}
+	
+	@PostMapping("/studentLogin")
+	@Transactional
+	public String studentLogin(@ModelAttribute("theStudent") StudentDetails theStudent, Model theModel) throws Exception 
+	{
+		System.out.println(request.getRequestURI());
+		System.out.println(request.getRequestURL().toString());
+		
+		Session currentSession = entityManager.unwrap(Session.class);
+		StudentDetails obj=currentSession.get(StudentDetails.class, theStudent.getUsername());
+		
+		System.out.println("obj= "+obj);
+		
+		if(obj!=null)
+			System.out.println("obj username= "+obj.getUsername());
+		
+		
+		if(obj!=null)
+		{
+			EncryptPassword ep=new EncryptPassword();
+			if((ep.encrypt(theStudent.getPassword())).compareTo(obj.getPassword())==0)
+			{
+				HttpSession session=request.getSession();
+				session.setAttribute("studentUsername",obj.getUsername());
+				return "redirect:/studentPage";
+			}
+		}
+		
+		theModel.addAttribute("studentLoginError", "Invalid Credentials!");
+		return "LoginPage";
+	}
+	
+	@RequestMapping("/studentPage")
+	public String studentPage()
+	{
+		return "StudentPage";
+	}
+	
+	@PostMapping("/adminSignup")
+	@Transactional
+	public String adminSignup(@ModelAttribute("newadmin") AdminDetails theAdmin, Model theModel) throws Exception 
+	{
+		String password=theAdmin.getPassword();
+		
+		EncryptPassword ep=new EncryptPassword();
+		theAdmin.setPassword(ep.encrypt(theAdmin.getPassword()));
+		
+		Session currentSession = entityManager.unwrap(Session.class);
+		AdminDetails obj=currentSession.get(AdminDetails.class, theAdmin.getUsername());
+		if(obj==null)
+			currentSession.save(theAdmin);       //if no same username found then create new user
+		else
+		{
+			theModel.addAttribute("firstname", theAdmin.getFirstname());
+			theModel.addAttribute("lastname", theAdmin.getLastname());
+			theModel.addAttribute("username", theAdmin.getUsername());
+			theModel.addAttribute("password", password);
+			theModel.addAttribute("usernameExistsError", "Username exists");
+			return "AdminSignupPage";
+		}
+		
+		theModel.addAttribute("success", "New user created!");
+		return "AdminSignupPage";	
+	}
+	
+	@PostMapping("/studentSignup")
+	@Transactional
+	public String studentSignup(@ModelAttribute("newstudent") StudentDetails theStudent, Model theModel) throws Exception 
+	{
+		String password=theStudent.getPassword();
+		
+		EncryptPassword ep=new EncryptPassword();
+		theStudent.setPassword(ep.encrypt(theStudent.getPassword()));
+		
+		Session currentSession = entityManager.unwrap(Session.class);
+		StudentDetails obj=currentSession.get(StudentDetails.class, theStudent.getUsername());
+		if(obj==null)
+			currentSession.save(theStudent);       //if no same username found then create new user
+		else
+		{
+			theModel.addAttribute("firstname", theStudent.getFirstname());
+			theModel.addAttribute("lastname", theStudent.getLastname());
+			theModel.addAttribute("email", theStudent.getEmail());
+			theModel.addAttribute("contact", theStudent.getContact());
+			theModel.addAttribute("username", theStudent.getUsername());
+			theModel.addAttribute("password", password);
+			theModel.addAttribute("usernameExistsError", "Username exists");
+			return "StudentSignupPage";
+		}
+		
+		theModel.addAttribute("success", "New user created!");
+		return "StudentSignupPage";
+		
 	}
 	
 	@RequestMapping("/logout")

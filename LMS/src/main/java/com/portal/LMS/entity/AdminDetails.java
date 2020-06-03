@@ -12,10 +12,10 @@ import javax.persistence.Table;
 public class AdminDetails {
 	
 	@Column(name="firstname")
-	String firstName;
+	String firstname;
 	
 	@Column(name="lastname")
-	String lastName;
+	String lastname;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -29,28 +29,28 @@ public class AdminDetails {
 	{	
 	}
 
-	public AdminDetails(String firstName, String lastName, String username, String password) {
+	public AdminDetails(String firstname, String lastname, String username, String password) {
 		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.firstname = firstname;
+		this.lastname = lastname;
 		this.username = username;
 		this.password = password;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public String getFirstname() {
+		return firstname;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public String getLastname() {
+		return lastname;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setLastName(String lastname) {
+		this.lastname = lastname;
 	}
 
 	public String getUsername() {
