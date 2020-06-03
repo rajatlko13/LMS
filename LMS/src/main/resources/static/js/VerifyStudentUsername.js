@@ -4,7 +4,8 @@
 
 function verifyUsername()
 	{  
-		var username=document.getElementById("studentUsername").value;  
+		var username=document.getElementById("studentUsername").value; 
+		console.log(username);
 		var url="VerifyStudentUsername?username="+username;  
 		  
 		const xhr = new XMLHttpRequest();
