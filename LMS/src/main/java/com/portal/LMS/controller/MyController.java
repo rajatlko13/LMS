@@ -6,6 +6,7 @@ import java.math.BigInteger;
 import java.sql.Date;
 import java.util.List;
 
+import javax.annotation.PreDestroy;
 import javax.persistence.EntityManager;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -1089,6 +1090,12 @@ public class MyController {
 			return "main";
 		else
 			return address;
+	}
+	
+	@PreDestroy
+	public void closeEntityManager()
+	{
+		entityManager.close();
 	}
 
 }

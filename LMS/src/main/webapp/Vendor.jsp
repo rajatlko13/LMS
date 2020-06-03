@@ -378,7 +378,7 @@ $(document).ready(function(){
 <script type="text/javascript">
 	function Redirect()
 	{
-		window.location="http://localhost:8080/LibraryManagementSystem/viewVendor";
+		window.location="https://library-portal.herokuapp.com/viewVendor";
 	}	
 </script>
 

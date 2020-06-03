@@ -335,7 +335,7 @@ number.onkeydown = function(e)
 <script type="text/javascript">
 	function Redirect()
 	{
-		window.location="http://localhost:8080/LibraryManagementSystem/StudentUpdateDetails.jsp";
+		window.location="https://library-portal.herokuapp.com/StudentUpdateDetails.jsp";
 	}	
 </script>
 

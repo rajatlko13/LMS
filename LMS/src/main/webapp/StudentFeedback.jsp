@@ -133,7 +133,7 @@
 <script type="text/javascript">
 	function Redirect()
 	{
-		window.location="http://library-portal.herokuapp.com/studentFeedback";
+		window.location="https://library-portal.herokuapp.com/studentFeedback";
 	}
 </script>
 

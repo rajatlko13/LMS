@@ -386,7 +386,7 @@ if(session.getAttribute("adminUsername")==null)
 <script type="text/javascript">
 	function Redirect()
 	{
-		window.location="http://library-portal.herokuapp.com/deleteBook";
+		window.location="https://library-portal.herokuapp.com/deleteBook";
 	}	
 </script>
 
