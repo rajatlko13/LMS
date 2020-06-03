@@ -307,7 +307,7 @@
 <script type="text/javascript">
 	function Redirect()
 	{
-		window.location="http://localhost:8080/main";
+		window.location="https://library-portal.herokuapp.com/";
 	}
 </script>
 
