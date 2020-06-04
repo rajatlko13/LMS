@@ -66,10 +66,11 @@
   </div>
 </nav>
 
-<form:form action="studentSignup" modelAttribute="theStudent" method="post" class="container mx-auto my-5 bg-light py-2" style="width: 55vw; border-style: solid;border-radius: 6px;">
+<div id="studentSignupForm">
+<form:form action="studentSignup" modelAttribute="theStudent" method="post" class="container mx-auto my-5 bg-light py-2" style="border-style: solid;border-radius: 6px;">
 <h2 class="text-center">Student Signup</h2>
 <hr class="w-25">
-<div class="text-center mb-4">
+<div class="text-center mb-4 mx-auto">
 	<svg class="icon">
 		<use xlink:href="/images/iconStudentSignup.svg#null" />
 	</svg>
@@ -139,7 +140,7 @@
 		        <button type="submit" id="submitButton" class="btn btn-primary mb-3" style=" width:160px">Sign Up</button>
 		      </div>
 </form:form>
-
+</div>
 						<!-- Contact Modal -->
 <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -304,6 +305,20 @@ section .section-title {
 .carousel-inner img {
       width: 100%;
       height: 100%;
+  }
+}
+
+@media screen and (max-width: 640px){
+  #studentSignupForm{
+  	width:90%;
+  	margin:auto;
+  }
+}
+
+@media screen and (min-width: 641px){
+  #studentSignupForm{
+  	width:55%;
+  	margin:auto;
   }
 }
 

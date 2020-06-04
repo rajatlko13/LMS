@@ -26,7 +26,7 @@
   	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
 
 </head>
-<body style="overflow-x:hidden">
+<body>
 
 <%
 response.setHeader("Cache-Control","no-cache,no-store,must revalidate");

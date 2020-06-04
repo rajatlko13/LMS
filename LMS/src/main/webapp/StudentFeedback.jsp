@@ -66,7 +66,7 @@
 
 <a id="feedbackSubmittedButton" style="display:none" data-toggle="modal" data-target="#feedbackSubmittedModal">Feedback Submitted Button</a>
 
-<form:form action="storeStudentFeedback" method="post" class="container mx-auto my-4 bg-light py-2" style="width: 50%; font-weight: bold">
+<form:form action="storeStudentFeedback" id="feedbackForm" method="post" class="container mx-auto my-4 bg-light py-2" style="font-weight: bold">
 <h1 class="text-center">Feedback Form</h1>
 <hr class="w-50">
 	<div class="form-group mt-4">
@@ -138,7 +138,7 @@
 </script>
 
 <section class="row mt-2">
-<footer class="container-fluid" style="position:fixed; bottom:1px; float:bottom;">
+<footer class="container-fluid" style="position:fixed; left:0; bottom:0; width:100%;">
   <div class="bg-dark text-white">
   <span class="col-md-4" style="float: left">&copy copyright by Central Institute Library 2020</span>
   <span class="col-md-6 text-center" style="margin-left: 100px">
@@ -152,6 +152,22 @@
 </div>
 </footer>
 </section>
+
+<style>
+@media screen and (max-width: 640px){
+  #feedbackForm{
+  	width:80%;
+  	margin:auto;
+  }
+}
+
+@media screen and (min-width: 641px){
+  #feedbackForm{
+  	width:40%;
+  	margin:auto;
+  }
+}
+</style>
 
 </body>
 </html>

@@ -84,8 +84,8 @@ if(session.getAttribute("studentUsername")==null)
 	<button id="changeEmailButton" class="btn w-50 font-weight-bold text-white" style="background-color:#1DA3EB">Click to Change Email</button>
 </div>
 
-<div id="changeEmailForm" style="display:none">
-	<form:form action="changeStudentEmail" method="post" class="container mx-auto my-4 bg-light py-2" style="width: 55vw; font-weight: bold; border: solid">
+<div id="changeEmailForm" class="updateInfo" style="display:none">
+	<form:form action="changeStudentEmail" method="post" class="container mx-auto my-4 bg-light py-2" style="font-weight: bold; border: solid">
 	<h1 class="text-center" style="font-family: 'PT Serif', serif;">Change Email</h1>
 	<hr class="w-50">
 		<div class="text-center mb-2">
@@ -140,8 +140,8 @@ $(document).ready(function(){
 	<button id="changeContactButton" class="btn w-50 font-weight-bold text-white" style="background-color:#1DA3EB">Click to Change Contact</button>
 </div>
 
-<div id="changeContactForm" style="display:none">
-	<form:form action="changeStudentContact" method="post" class="container mx-auto my-4 bg-light py-2" style="width: 55vw; font-weight: bold; border: solid">
+<div id="changeContactForm" class="updateInfo" style="display:none">
+	<form:form action="changeStudentContact" method="post" class="container mx-auto my-4 bg-light py-2" style="font-weight: bold; border: solid">
 	<h1 class="text-center" style="font-family: 'PT Serif', serif;">Change Contact</h1>
 	<hr class="w-50">
 		<div class="text-center mb-2">
@@ -196,8 +196,8 @@ $(document).ready(function(){
 	<button id="changePasswordButton" class="btn w-50 font-weight-bold text-white" style="background-color:#1DA3EB">Click to Change Password</button>
 </div>
 
-<div id="changePasswordForm" style="display:none">
-	<form:form action="changeStudentPassword" method="post" class="container mx-auto my-4 bg-light py-2" style="width: 55vw; font-weight: bold; border: solid">
+<div id="changePasswordForm" class="updateInfo" style="display:none">
+	<form:form action="changeStudentPassword" method="post" class="container mx-auto my-4 bg-light py-2" style="font-weight: bold; border: solid">
 	<h1 class="text-center" style="font-family: 'PT Serif', serif;">Change Password</h1>
 	<hr class="w-50">
 		<div class="text-center mb-2">
@@ -416,6 +416,20 @@ section .section-title {
 .carousel-inner img {
       width: 100%;
       height: 100%;
+  }
+}
+
+@media screen and (max-width: 640px){
+  .updateInfo{
+  	width:80%;
+  	margin:auto;
+  }
+}
+
+@media screen and (min-width: 641px){
+  .updateInfo{
+  	width:55%;
+  	margin:auto;
   }
 }
 
