@@ -34,14 +34,14 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin-top:1px">
-  <a class="navbar-brand" href="#"><i class="fa fa-book" aria-hidden="true"></i> Central Institute Library <i class="fa fa-user" aria-hidden="true"></i></a>
+  <a class="navbar-brand mr-5" href="#"><i class="fa fa-book" aria-hidden="true"></i> Central Institute Library <i class="fa fa-user" aria-hidden="true"></i></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active ml-5 mr-3">
+      <li class="nav-item active mr-3">
         <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item mr-3">
@@ -126,9 +126,9 @@
 	<hr class="mx-auto w-25 text-dark">
 	<div class="row mt-4">
 		<div class="col-lg-6">
-			<img src="http://creativelibraryconcepts.com/wp-content/uploads/2017/06/standard-library-shelf-1024x683.jpg" class="img-fluid" width="800">
+			<img src="http://creativelibraryconcepts.com/wp-content/uploads/2017/06/standard-library-shelf-1024x683.jpg" class="img-fluid" width="800" style="height:55vh">
 		</div>
-		<div class="col-lg-6">
+		<div class="col-lg-6 mt-1">
 			<h3 class="text-dark" style="font-family: 'Josefin Sans', sans-serif;">Know the Facts</h3>
 			<hr>
 			<p style="font-family: Courgette, cursive;"><font size=3>The Central Institute Library is housed in a state-of-the-art new building, covering about 65000 sq.ft area and is located close to all academic blocks of the Institute. With attractive palatial interiors and a seating capacity of 750, the library includes, well-lit reading halls, stacks, display areas, e-library zones, audio-visual library and study carrels. There are a couple of air-conditioned reading halls.
@@ -138,20 +138,20 @@
 	</div>
 
 	<div class="row mt-5">
-		<div class="col-lg-6">
+		<div class="col-lg-6 mt-1">
 			<h3 class="text-dark">Collection Of Books</h3>
 			<hr>
-			<p style="font-family: Courgette, cursive;"><font size=3>The library is fully automated with a collection of over 2,45,000 books, manuscripts, a good collection of rare books with bound volumes of journals since 1920s. Library subscribes to over 209 printed National and International journals. About 39,106 full-text e-journals and as many as 36 databases have been made available on the campus network and can be accessed in the hostel rooms and staff residences.</font>
+			<p style="font-family: Courgette, cursive;"><font size=3>The library is fully automated with a collection of over 2,45,000 books, manuscripts, a good collection of rare books with bound volumes of journals since 1920s. Library subscribes to over 209 printed National and International journals. About 39,106 full-text e-journals and as many as 36 databases have been made available on the campus network and can be accessed in the hostel rooms and staff residences.</font></p>
 			<button type="button" class="btn btn-primary mt-3" padding=2 ><a href="About.jsp" class="text-white">View More...</a></button>
 		</div>
-		<div class="col-lg-6">
-			<img src="https://www.bing.com/images/blob?bcid=S3dSrhf66UABgQ" width=100% class="img-fluid">
+		<div class="col-lg-6 mt-1">
+			<img src="https://www.libraryjournal.com/binaries/content/gallery/home-shelfie_kp_smaller.jpg" width=100% class="img-fluid" style="height:55vh">
 		</div>
 	</div>
 </section>
 
-<div class="row container mx-auto mt-2">
-<div class="card col-lg-3 mx-auto bg-light border border-dark">
+<div class="row container mx-auto">
+<div class="card col-lg-3 mx-auto bg-light border border-dark" style="margin-top:1%">
   <img src="https://i0.wp.com/api.gretchenrubin.com/wp-content/uploads/2017/08/gretchen-rubin-books-6.jpg?quality=90&resize=650%2C355" class="card-img-top pt-3" alt="first image" height="220">
   <div class="card-body">
     <h5 class="card-title">Latest Arrivals</h5>
@@ -159,7 +159,7 @@
   </div>
 </div>
 
-<div class="card col-lg-3 mx-auto bg-light border border-dark">
+<div class="card col-lg-3 mx-auto bg-light border border-dark" style="margin-top:1%">
   <img src="https://www.foundationeducation.edu.au/sites/default/files/jumbotron/Course_COURSEHOME_79441093_1920x1080_0.jpg" class="card-img-top pt-3" alt="first image" height="220">
   <div class="card-body">
     <h5 class="card-title">E-resources</h5>
@@ -168,7 +168,7 @@
   </div>
 </div>
 
-<div class="card col-lg-3 mx-auto bg-light border border-dark">
+<div class="card col-lg-3 mx-auto bg-light border border-dark" style="margin-top:1%">
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVxg5WlmbchiZ3BJ-zTOeWg6vKXoiiyzQlNuPL5uiru_nBZY9jQQ" class="card-img-top pt-3" alt="first image" height="220">
   <div class="card-body">
     <h5 class="card-title">Library Rules</h5>   

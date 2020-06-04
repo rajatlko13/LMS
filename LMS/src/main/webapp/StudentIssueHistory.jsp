@@ -16,7 +16,7 @@
 <head>
 <title>Central Institute Library</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<script src="https://use.fontawesome.com/ec453aebd2.js"></script>
 	<link href="fontawesome-free-5.9.0-web\css\all.css" rel="stylesheet">
@@ -26,7 +26,7 @@
   	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
 
 </head>
-<body>
+<body style="overflow-x:hidden">
 
 <%
 response.setHeader("Cache-Control","no-cache,no-store,must revalidate");
@@ -37,14 +37,14 @@ if(session.getAttribute("studentUsername")==null)
 %>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin-top:1px">
-  <a class="navbar-brand" href="#"><i class="fa fa-book" aria-hidden="true"></i> Central Institute Library <i class="fa fa-user" aria-hidden="true"></i></a>
+  <a class="navbar-brand mr-5" href="#"><i class="fa fa-book" aria-hidden="true"></i> Central Institute Library <i class="fa fa-user" aria-hidden="true"></i></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
  
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item ml-5 mr-3">
+      <li class="nav-item mr-3">
         <a class="nav-link" href="studentPage">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item mr-3">
@@ -91,7 +91,9 @@ if(session.getAttribute("studentUsername")==null)
 </div>
  
  <c:if test="${emptyIssueBookHistory == null}">
-	<table class="table table-striped container text-center mt-4">
+ <div class="row justify-content-center">
+    <div class="col-auto">
+	<table class="table table-responsive table-striped container text-center mt-4">
 	  <thead class="thead-dark">
 	    <tr>
 	      <th scope="col">Book ID</th>
@@ -120,6 +122,8 @@ if(session.getAttribute("studentUsername")==null)
 	    </c:forEach>
 	  </tbody> 
 	</table>
+	</div>
+</div>
 </c:if>
 
 <c:if test="${emptyIssueBookHistory != null}">

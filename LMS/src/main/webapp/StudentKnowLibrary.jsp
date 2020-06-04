@@ -35,8 +35,8 @@ if(session.getAttribute("studentUsername")==null)
       <li class="nav-item ml-5 mr-3">
         <a class="nav-link" href="studentPage">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item active mr-3">
-        <a class="nav-link" href="#">About</a>
+      <li class="nav-item mr-3">
+        <a class="nav-link" href="StudentAbout.jsp">About</a>
       </li>
        <li class="nav-item mr-3">
         <a class="nav-link" href="StudentEresources.jsp">E-Resources</a>

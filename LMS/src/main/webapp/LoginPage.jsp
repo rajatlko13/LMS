@@ -7,8 +7,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<script src="https://use.fontawesome.com/ec453aebd2.js"></script>
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -25,14 +25,14 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin-top:1px">
-  <a class="navbar-brand" href="#"><i class="fa fa-book" aria-hidden="true"></i> Central Institute Library <i class="fa fa-user" aria-hidden="true"></i></a>
+  <a class="navbar-brand mr-5" href="#"><i class="fa fa-book" aria-hidden="true"></i> Central Institute Library <i class="fa fa-user" aria-hidden="true"></i></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item ml-5 mr-3">
+      <li class="nav-item mr-3">
         <a class="nav-link" href="main.jsp">Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item mr-3">
@@ -66,9 +66,9 @@
 </nav>
 
 <section class="container">
-<div class="row my-1">
+<div class="row">
 
-<div class="col-md-6 col-lg-6">
+<div class="col-md-6 col-lg-6" style="margin-top:1%">
 <div class="mx-auto">
 <form:form action="adminLogin" modelAttribute="theAdmin" method="post" class="mx-auto bg-light py-2" style="width:310px ; border-style: solid;border-radius: 6px;">
 <h2 class="text-center">Admin Login</h2>
@@ -115,7 +115,7 @@
 </div>
 </div>
 
-<div class="col-md-6 col-lg-6">
+<div class="col-md-6 col-lg-6" style="margin-top:1%">
 <div class="mx-auto">
 <form:form action="studentLogin" modelAttribute="theStudent" method="post" class="mx-auto bg-light py-2" style="width:310px ; border-style: solid;border-radius: 6px;">
 <h2 class="text-center">Student Login</h2>

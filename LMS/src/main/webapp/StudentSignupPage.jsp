@@ -7,8 +7,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<script src="https://use.fontawesome.com/ec453aebd2.js"></script>
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -66,7 +66,7 @@
   </div>
 </nav>
 
-<form:form action="studentSignup" modelAttribute="theStudent" method="post" class="container mx-auto my-5 bg-light py-2" style="width: 800px; border-style: solid;border-radius: 6px;">
+<form:form action="studentSignup" modelAttribute="theStudent" method="post" class="container mx-auto my-5 bg-light py-2" style="width: 55vw; border-style: solid;border-radius: 6px;">
 <h2 class="text-center">Student Signup</h2>
 <hr class="w-25">
 <div class="text-center mb-4">
@@ -76,13 +76,13 @@
 <!--	<i class="fa fa-user-plus fa-5x" aria-hidden="true"></i>	-->
 </div>
 		      <div style="font-weight: bold">
-				<!--      
+				     
 			      <c:if test="${usernameExistsError != null}">
 					<div class="alert alert-danger">
 						Username already exists! Please enter a unique username.
 					</div>
 				  </c:if>
-				--> 
+				
 				  <c:if test="${success != null}">
 					<div class="alert alert-success">
 						Your account has been created successfully! Go to <a href="LoginPage.jsp">Login</a>.

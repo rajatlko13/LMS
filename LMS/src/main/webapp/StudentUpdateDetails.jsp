@@ -15,7 +15,7 @@
 <head>
 <title>Central Institute Library</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<script src="https://use.fontawesome.com/ec453aebd2.js"></script>
 	<link href="fontawesome-free-5.9.0-web\css\all.css" rel="stylesheet">
@@ -36,14 +36,14 @@ if(session.getAttribute("studentUsername")==null)
 %>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin-top:1px">
-  <a class="navbar-brand" href="#"><i class="fa fa-book" aria-hidden="true"></i> Central Institute Library <i class="fa fa-user" aria-hidden="true"></i></a>
+  <a class="navbar-brand mr-5" href="#"><i class="fa fa-book" aria-hidden="true"></i> Central Institute Library <i class="fa fa-user" aria-hidden="true"></i></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
  
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item ml-5 mr-3">
+      <li class="nav-item mr-3">
         <a class="nav-link" href="studentPage">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item mr-3">
@@ -85,7 +85,7 @@ if(session.getAttribute("studentUsername")==null)
 </div>
 
 <div id="changeEmailForm" style="display:none">
-	<form:form action="changeStudentEmail" method="post" class="container mx-auto my-4 bg-light py-2" style="width: 50%; font-weight: bold; border: solid">
+	<form:form action="changeStudentEmail" method="post" class="container mx-auto my-4 bg-light py-2" style="width: 55vw; font-weight: bold; border: solid">
 	<h1 class="text-center" style="font-family: 'PT Serif', serif;">Change Email</h1>
 	<hr class="w-50">
 		<div class="text-center mb-2">
@@ -99,7 +99,7 @@ if(session.getAttribute("studentUsername")==null)
 				});
 			</script>
 			<div class="alert alert-danger mt-3">
-				Invalid present email entered!
+				Invalid current email entered!
 			</div>
 		</c:if>
 		<c:if test="${changedEmail != null}">
@@ -114,8 +114,8 @@ if(session.getAttribute("studentUsername")==null)
 		 </c:if>
 		<div class="container row mt-4">
 			<div class="form-group col-md-6 col-lg-6">
-				<label>Present Email</label>
-			    <input type="email" name="presentEmail" class="form-control" placeholder="Enter present email" required value="${presentEmail}">
+				<label>Current Email</label>
+			    <input type="email" name="presentEmail" class="form-control" placeholder="Enter current email" required value="${presentEmail}">
 			</div>
 			<div class="form-group col-md-6 col-lg-6">
 				<label>New Email</label>
@@ -141,7 +141,7 @@ $(document).ready(function(){
 </div>
 
 <div id="changeContactForm" style="display:none">
-	<form:form action="changeStudentContact" method="post" class="container mx-auto my-4 bg-light py-2" style="width: 50%; font-weight: bold; border: solid">
+	<form:form action="changeStudentContact" method="post" class="container mx-auto my-4 bg-light py-2" style="width: 55vw; font-weight: bold; border: solid">
 	<h1 class="text-center" style="font-family: 'PT Serif', serif;">Change Contact</h1>
 	<hr class="w-50">
 		<div class="text-center mb-2">
@@ -155,7 +155,7 @@ $(document).ready(function(){
 				});
 			</script>
 			<div class="alert alert-danger mt-3">
-				Invalid present contact entered!
+				Invalid current contact entered!
 			</div>
 		</c:if>
 		<c:if test="${changedContact != null}">
@@ -170,8 +170,8 @@ $(document).ready(function(){
 		 </c:if>
 		<div class="container row mt-4">
 			<div class="form-group col-md-6 col-lg-6">
-				<label>Present Contact</label>
-			    <input type="text" id="contact" name="presentContact" class="form-control" placeholder="Enter present contact" required value="${presentContact}">
+				<label>Current Contact</label>
+			    <input type="text" id="contact" name="presentContact" class="form-control" placeholder="Enter current contact" required value="${presentContact}">
 			</div>
 			<div class="form-group col-md-6 col-lg-6">
 				<label>New Contact</label>
@@ -197,7 +197,7 @@ $(document).ready(function(){
 </div>
 
 <div id="changePasswordForm" style="display:none">
-	<form:form action="changeStudentPassword" method="post" class="container mx-auto my-4 bg-light py-2" style="width: 50%; font-weight: bold; border: solid">
+	<form:form action="changeStudentPassword" method="post" class="container mx-auto my-4 bg-light py-2" style="width: 55vw; font-weight: bold; border: solid">
 	<h1 class="text-center" style="font-family: 'PT Serif', serif;">Change Password</h1>
 	<hr class="w-50">
 		<div class="text-center mb-2">
@@ -211,7 +211,7 @@ $(document).ready(function(){
 				});
 			</script>
 			<div class="alert alert-danger mt-3">
-				Invalid present password entered!
+				Invalid current password entered!
 			</div>
 		</c:if>
 		<c:if test="${changedPassword != null}">
@@ -226,8 +226,8 @@ $(document).ready(function(){
 		 </c:if>
 		<div class="container row mt-4">
 			<div class="form-group col-md-6 col-lg-6">
-				<label>Present Password</label>
-			    <input type="password" name="presentPassword" class="form-control" placeholder="Enter present password" required value="${presentPassword}">
+				<label>Current Password</label>
+			    <input type="password" name="presentPassword" class="form-control" placeholder="Enter current password" required value="${presentPassword}">
 			</div>
 			<div class="form-group col-md-6 col-lg-6">
 				<label>New Password</label>

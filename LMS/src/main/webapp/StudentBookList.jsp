@@ -9,7 +9,7 @@
 <head>
 <title>Central Institute Library</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<script src="https://use.fontawesome.com/ec453aebd2.js"></script>
 	<link href="fontawesome-free-5.9.0-web\css\all.css" rel="stylesheet">
@@ -85,7 +85,8 @@ if(session.getAttribute("studentUsername")==null)
 <a style="display:none" id="hiddenLink" data-toggle="modal" data-target="#bookListModal">Hidden</a>
 
 <c:if test="${emptyBookDetails == null}">
-<table class="table table-striped container text-center mt-4">
+<div class="container">
+<table class="table table-responsive table-striped text-center mt-4">
   <thead class="thead-dark">
     <tr>
       <th scope="col">Book ID</th>
@@ -120,6 +121,7 @@ if(session.getAttribute("studentUsername")==null)
     </c:forEach>
   </tbody>
 </table>
+</div>
 </c:if>
 
 <c:if test="${emptyBookDetails != null}">

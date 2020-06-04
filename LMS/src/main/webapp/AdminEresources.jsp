@@ -25,14 +25,14 @@ if(session.getAttribute("adminUsername")==null)
 %>
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-1">
-  <a class="navbar-brand" href="#"><i class="fa fa-book" aria-hidden="true"></i> Central Institute Library <i class="fa fa-user" aria-hidden="true"></i></a>
+  <a class="navbar-brand  mr-5" href="#"><i class="fa fa-book" aria-hidden="true"></i> Central Institute Library <i class="fa fa-user" aria-hidden="true"></i></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
  
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item ml-5 mr-3">
+      <li class="nav-item mr-3">
         <a class="nav-link" href="AdminPage.jsp">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item mr-3">
