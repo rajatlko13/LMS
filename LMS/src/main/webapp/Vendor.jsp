@@ -94,9 +94,9 @@ if(session.getAttribute("adminUsername")==null)
 <button id="viewVendorsButton" class="btn btn-success w-50">Click to View Vendor Details</button>
 </div>
 
-<div id="viewVendorsTable" style="display:none">
+<div id="viewVendorsTable" class="table-responsive" style="display:none">
 	<c:if test="${emptyVendorDetails == null}">
-		<table class="table table-striped container text-center" >
+		<table class="table table-striped container text-center mx-auto" >
 		  <thead class="thead-dark">
 		    <tr>
 		      <th scope="col">Vendor ID</th>
@@ -140,7 +140,8 @@ $(document).ready(function(){
 <button id="newVendorButton" class="btn btn-success w-50">Click to Add New Vendor</button>
 </div>
 
-<form:form id="newVendorForm" action="addNewVendor" method="post" modalAttribute="theVendor" class="container mx-auto my-4 bg-light py-2" style="display:none; width: 50%; font-weight: bold; border: solid">
+<div id="newVendorForm" class="container mx-auto my-4 bg-light py-2" style="display:none; font-weight: bold; border: solid">
+<form:form action="addNewVendor" method="post" modalAttribute="theVendor" >
 <h1 class="text-center">Add Vendor</h1>
 <hr class="w-50">
 	<div class="text-center mb-2">
@@ -178,13 +179,14 @@ $(document).ready(function(){
 	  	</div>
 	  	<div class="form-group col-md-6 col-lg-6">
 		    <label>Contact</label>
-		    <input type="text" name="contact" class="form-control" placeholder="Enter contact" required value="${contact}">
+		    <input type="text" name="contact" id="contactNumber" class="form-control" placeholder="Enter contact" required value="${contact}">
 	  	</div>
   	</div>
   	<div style="text-align:center" class="mt-1 mb-2">
   		<button type="submit" class="btn btn-danger">Add Vendor</button>
   	</div>
 </form:form>
+</div>
 
 <script>
 $(document).ready(function(){
@@ -382,6 +384,15 @@ $(document).ready(function(){
 	}	
 </script>
 
+<script>
+var number = document.getElementById('contactNumber');
+number.onkeydown = function(e) 
+{
+	if(!((e.keyCode > 95 && e.keyCode < 106) || (e.keyCode > 47 && e.keyCode < 58) || e.keyCode == 8 || (e.keyCode > 36 && e.keyCode < 41))) 
+	    return false;
+}
+</script>
+
 <style type="text/css">
 	section {
     padding: 60px 0;
@@ -459,6 +470,20 @@ section .section-title {
 .carousel-inner img {
       width: 100%;
       height: 100%;
+  }
+}
+
+@media screen and (max-width: 640px){
+  #newVendorForm{
+  	width:90%;
+  	margin:auto;
+  }
+}
+
+@media screen and (min-width: 641px){
+  #newVendorForm{
+  	width:50%;
+  	margin:auto;
   }
 }
 

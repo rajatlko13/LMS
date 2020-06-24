@@ -17,6 +17,9 @@
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+  	<script src="/js/SearchBarForm.js"></script>
+  	<script src="/js/VerifyUsername.js"></script>
+  	
 <title>Central Institute Library</title>
 </head>
 <body>
@@ -59,7 +62,7 @@ if(session.getAttribute("adminUsername")==null)
           <a class="dropdown-item" href="sendReminderMail"><i class="fa fa-envelope" aria-hidden="true"></i> Send Reminder Mail </a>    
         </div>
       </li>
-      <li class="nav-item active dropdown mr-3">
+      <li class="nav-item dropdown mr-3">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Manage Books
         </a>
@@ -67,7 +70,7 @@ if(session.getAttribute("adminUsername")==null)
           <a class="dropdown-item" href="issueBook"><i class="fa fa-check-square-o" aria-hidden="true"></i> Issue Book</a>
           <a class="dropdown-item" href="returnBook"><i class="fa fa-backward" aria-hidden="true"></i> Return Book</a>
           <a class="dropdown-item" href="viewAddBook"><i class="fa fa-plus-square" aria-hidden="true"></i> Add Books</a>
-          <a class="dropdown-item" href="#"><i class="fa fa-trash" aria-hidden="true"></i> Delete Books</a>
+          <a class="dropdown-item" href="deleteBook"><i class="fa fa-trash" aria-hidden="true"></i> Delete Books</a>
         </div>
       </li>
       <li class="nav-item mr-3 mt-1">
@@ -83,7 +86,7 @@ if(session.getAttribute("adminUsername")==null)
   </div>
 </nav>
 
-<form:form action="adminSignup" modelAttribute="theAdmin" method="post" class="container mx-auto my-5 bg-light py-2" style="width: 800px; border-style: solid;border-radius: 6px;">
+<form:form action="adminSignup" modelAttribute="newAdmin" method="post" class="container mx-auto my-5 bg-light py-2" style="width: 800px; border-style: solid;border-radius: 6px;">
 <h2 class="text-center">Add New Admin</h2>
 <hr class="w-25">
 <div class="text-center mb-2">
@@ -113,12 +116,17 @@ if(session.getAttribute("adminUsername")==null)
 		<div class="container row">
 			 <div class="form-group col-md-6 col-lg-6">
 			   <label>Username</label>
-			   <input name="username" type="text" class="form-control" placeholder="Enter username" required value=${username}>			        
+			   <div class="input-group">
+				    <input name="username" type="text" class="form-control" id="adminUsername" onkeyup="verifyAdminUsername()" placeholder="Enter username" required value=${username}>			        
+				  	<div class="invalid-feedback">
+				      Please enter unique username.
+				    </div>	  	
+				</div>		        
 			 </div>
-		 <div class="form-group col-md-6 col-lg-6">
-		   <label>Password</label>
-		   <input name="password" type="password" class="form-control" placeholder="Enter password" required value=${password}>
-		 </div>
+			 <div class="form-group col-md-6 col-lg-6">
+			   <label>Password</label>
+			   <input name="password" type="password" class="form-control" placeholder="Enter password" required value=${password}>
+			 </div>
 		</div>
 	</div>
 	<div style="text-align:center">

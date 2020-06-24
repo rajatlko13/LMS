@@ -114,17 +114,17 @@ public class MyController {
 	
 	@PostMapping("/adminSignup")
 	@Transactional
-	public String adminSignup(@ModelAttribute("newadmin") AdminDetails theAdmin, Model theModel) throws Exception 
+	public String adminSignup(@ModelAttribute("newAdmin") AdminDetails theAdmin, Model theModel) throws Exception 
 	{
 		String password=theAdmin.getPassword();
 		
 		EncryptPassword ep=new EncryptPassword();
-		theAdmin.setPassword(ep.encrypt(theAdmin.getPassword()));
+		theAdmin.setPassword(ep.encrypt(password));
 		
 		Session currentSession = entityManager.unwrap(Session.class);
 		AdminDetails obj=currentSession.get(AdminDetails.class, theAdmin.getUsername());
 		if(obj==null)
-			currentSession.save(theAdmin);       //if no same username found then create new user
+			currentSession.save(theAdmin);       //if no same username found then create new admin account
 		else
 		{
 			theModel.addAttribute("firstname", theAdmin.getFirstname());

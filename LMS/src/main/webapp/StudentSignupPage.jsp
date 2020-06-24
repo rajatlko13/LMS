@@ -18,7 +18,7 @@
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
   	<script src="/js/SearchBarForm.js"></script>
-  	<script src="/js/VerifyStudentUsername.js"></script>
+  	<script src="/js/VerifyUsername.js"></script>
   	
 <title>Central Institute Library</title>
 </head>
@@ -114,19 +114,10 @@
 					  <div class="form-group col-md-6 col-lg-6">
 					    <label>Username</label>
 					    <div class="input-group">
-					    
-					    <input name="username" type="text" class="form-control" id="studentUsername" onkeyup="verifyUsername()" placeholder="Enter username" required value=${username}>			        
-					  	<div class="invalid-feedback">
-					      Please enter unique username.
-					    </div>
-		<!--		  	<div class="input-group-append">
-					  	<span class="input-group-text bg-white">
-					  	<svg class="icon" style="height:23px; width:23px">
-							<use xlink:href="resources/images/iconTick.svg#shapes-and-symbols" />
-						</svg>
-						</span>
-						</div>
-		  -->				  	
+						    <input name="username" type="text" class="form-control" id="studentUsername" onkeyup="verifyStudentUsername()" placeholder="Enter username" required value=${username}>			        
+						  	<div class="invalid-feedback">
+						      Please enter unique username.
+						    </div>	  	
 						</div>
 					  </div>
 					  <div class="form-group col-md-6 col-lg-6">

@@ -98,6 +98,7 @@ if(session.getAttribute("adminUsername")==null)
 </div>
 
 <c:if test="${emptyIssueBookHistory == null}">
+<div class="table-responsive">
 	<table class="table table-striped container text-center mt-4">
 	  <thead class="thead-dark">
 	    <tr>
@@ -133,6 +134,7 @@ if(session.getAttribute("adminUsername")==null)
 	    </c:forEach>
 	  </tbody> 
 	</table>
+  </div>
 	
 	<div class="text-center mb-1 text-primary">Page ${sessionScope.pageNo}</div>
 	<div class="container">
@@ -244,8 +246,6 @@ if(session.getAttribute("adminUsername")==null)
 	var element = document.getElementById(${sessionScope.pageNo});
 	element.classList.add("active");
 </script>
-
-
 
 <style type="text/css">
 	section {
