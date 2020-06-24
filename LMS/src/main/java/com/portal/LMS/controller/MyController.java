@@ -774,7 +774,7 @@ public class MyController {
 		session.setAttribute("issueBookHistory", issueBookHistory2);
 		
 		if(issueBookHistory2.isEmpty())
-			session.setAttribute("EmptyIssueBookHistory", "No records present");
+			session.setAttribute("emptyIssueBookHistory", "No records present");
 		
 		return "redirect:/BookIssueHistory.jsp";
 	}

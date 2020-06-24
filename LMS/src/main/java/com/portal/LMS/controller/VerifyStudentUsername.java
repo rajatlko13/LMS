@@ -26,9 +26,9 @@ public class VerifyStudentUsername extends HttpServlet {
 			{
 				response.getWriter().write("0");
 			}
-			String url="jdbc:mysql://sql12.freemysqlhosting.net/sql12344998?useSSL=false";
-			String uname="sql12344998";
-			String pass="sur24HMHfI";
+			String url="jdbc:mysql://sql12.freemysqlhosting.net/sql12350428?useSSL=false";
+			String uname="sql12350428";
+			String pass="bVJbkyk6Fj";
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con=DriverManager.getConnection(url,uname,pass);
 
