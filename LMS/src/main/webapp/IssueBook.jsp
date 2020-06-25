@@ -117,18 +117,18 @@ if(session.getAttribute("adminUsername")==null)
 	   	<c:url var="issueBookList" value="/issueBookList">
 			<c:param name="bookId" value="${book.bookid}" />
 		</c:url>
-		<c:if test="${book.copies>0}">
-		    <tr>
-		      <td>${book.bookid}</td>
-		      <td>${book.bookname}</td>
-		      <td>${book.author}</td>
-		      <td>${book.pages}</td>
-		      <td>${book.publisher}</td>
-		      <td>${book.genre}</td>
-		      <td>${book.copies}</td>
-		      <td><a href="${issueBookList}"><button class="btn btn-success btn-sm">Issue</button></a></td>
-		    </tr>
-	    </c:if>
+		<!-- <c:if test="${book.copies>0}">
+	    	</c:if>   --> 
+	    <tr>
+	      <td>${book.bookid}</td>
+	      <td>${book.bookname}</td>
+	      <td>${book.author}</td>
+	      <td>${book.pages}</td>
+	      <td>${book.publisher}</td>
+	      <td>${book.genre}</td>
+	      <td>${book.copies}</td>
+	      <td><a href="${issueBookList}"><button class="btn btn-success btn-sm">Issue</button></a></td>
+	    </tr>
     </c:forEach>
   </tbody>
 </table>

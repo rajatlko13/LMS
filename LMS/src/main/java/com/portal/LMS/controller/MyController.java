@@ -349,7 +349,7 @@ public class MyController {
 	public String issueBook(Model theModel)
 	{
 		Session currentSession = entityManager.unwrap(Session.class);
-		Query<BookDetails> query=currentSession.createQuery("from BookDetails",BookDetails.class);
+		Query<BookDetails> query=currentSession.createQuery("from BookDetails where copies>0",BookDetails.class);
 		List<BookDetails> bookDetails=query.getResultList();
 		theModel.addAttribute("bookdetails",bookDetails);
 		if(bookDetails.isEmpty())
@@ -616,7 +616,7 @@ public class MyController {
 	public String deleteBook(Model theModel)
 	{	
 		Session currentSession=entityManager.unwrap(Session.class);
-		Query<BookDetails> query=currentSession.createQuery("from BookDetails",BookDetails.class);
+		Query<BookDetails> query=currentSession.createQuery("from BookDetails where copies>0",BookDetails.class);
 		List<BookDetails> bookDetails=query.getResultList();
 		theModel.addAttribute("bookdetails",bookDetails);
 		if(bookDetails.isEmpty())
