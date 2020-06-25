@@ -15,7 +15,8 @@
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
-  	<script src="/js/SearchBarForm.js"></script>
+  	<link rel="stylesheet" type="text/css" href="/css/loaderStyle.css">
+
 </head>
 <body>
 
@@ -26,6 +27,19 @@ if(session.getAttribute("adminUsername")==null)
 	response.sendRedirect("main.jsp");
 }
 %>	
+
+<script>
+    $(window).on("load",function(){
+      $(".loader-wrapper").fadeOut("slow");
+    });
+</script>
+<div class="loader-wrapper">
+  <div>
+  	<span class="loader">
+  		<span class="loader-inner"></span>
+  	</span>
+  </div>
+</div>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin-top:1px">
   <a class="navbar-brand  mr-5" href="#"><i class="fa fa-book" aria-hidden="true"></i> Central Institute Library <i class="fa fa-user" aria-hidden="true"></i></a>

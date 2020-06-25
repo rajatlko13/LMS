@@ -94,7 +94,7 @@ if(session.getAttribute("adminUsername")==null)
 
 <div id="newBookForm" style="display:none">
 	<c:if test="${emptyVendorDetails == null }">
-		<form:form action="addNewBook" method="post" modalAttribute="theBookDetails" class="container mx-auto my-4 bg-light py-2" style="width: 50%; font-weight: bold; border: solid">
+		<form:form action="addNewBook" method="post" modalAttribute="theBookDetails" class="container mx-auto my-4 bg-light py-2" style="font-weight: bold; border: solid">
 		<h1 class="text-center">Add Books</h1>
 		<hr class="w-50">
 			<div class="text-center mb-2">
@@ -177,7 +177,7 @@ $(document).ready(function(){
 <button id="addCopiesButton" class="btn btn-success w-50">Click to Add Copies of Existing Books</button>
 </div>
 
-<div id="addCopiesTable" style="display:none">
+<div id="addCopiesTable" class="table-responsive" style="display:none">
 	<c:if test="${emptyBookDetails ==null}">
 		<table class="table table-striped container text-center mx-auto" >
 		  <thead class="thead-dark">
@@ -477,6 +477,20 @@ section .section-title {
 .carousel-inner img {
       width: 100%;
       height: 100%;
+  }
+}
+
+@media screen and (max-width: 640px){
+  #newBookForm{
+  	width:90%;
+  	margin:auto;
+  }
+}
+
+@media screen and (min-width: 641px){
+  #newBookForm{
+  	width:50%;
+  	margin:auto;
   }
 }
 
