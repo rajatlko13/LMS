@@ -103,9 +103,8 @@ if(session.getAttribute("studentUsername")==null)
 </div>
  
  <c:if test="${emptyIssueBookHistory == null}">
- <div class="row justify-content-center">
-    <div class="col-auto">
-	<table class="table table-responsive table-striped container text-center mt-4">
+ <div class="container table-responsive">
+	<table class="table table-striped container text-center mt-4">
 	  <thead class="thead-dark">
 	    <tr>
 	      <th scope="col">Book ID</th>
@@ -134,7 +133,6 @@ if(session.getAttribute("studentUsername")==null)
 	    </c:forEach>
 	  </tbody> 
 	</table>
-	</div>
 </div>
 </c:if>
 

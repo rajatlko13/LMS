@@ -25,8 +25,8 @@ public class SendMessage {
 	    String messg="You have issued the book <strong>"+bookname+" (barcode: "+barcode+")</strong> on "+issueDate+" from the Central Institute Library. Don't forget to return the book within 7 days otherwise you will be entilted to pay the late book return fine. Refer to the library rules section on the website for more information.";
 		
 	    // Sender's email ID and password needs to be mentioned
-	    final String from = "rajatlko13@gmail.com";
-	    final String pass = "humraj2018";
+	    final String from = "CentralInstituteLibrary@gmail.com";
+	    final String pass = "cli123321";
 
 	    // Defining the gmail host
 	    String host = "smtp.gmail.com";

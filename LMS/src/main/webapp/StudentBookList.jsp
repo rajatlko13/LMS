@@ -97,8 +97,8 @@ if(session.getAttribute("studentUsername")==null)
 <a style="display:none" id="hiddenLink" data-toggle="modal" data-target="#bookListModal">Hidden</a>
 
 <c:if test="${emptyBookDetails == null}">
-<div class="container">
-<table class="table table-responsive table-striped text-center mt-4">
+<div class="container table-responsive">
+<table class="table table-striped text-center mt-4">
   <thead class="thead-dark">
     <tr>
       <th scope="col">Book ID</th>

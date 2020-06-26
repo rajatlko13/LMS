@@ -110,8 +110,8 @@ if(session.getAttribute("adminUsername")==null)
 </div>
 
 <c:if test="${emptyIssueBookHistory == null}">
-<div class="table-responsive">
-	<table class="table table-striped container text-center mt-4">
+<div class="container table-responsive">
+	<table class="table table-striped text-center mt-4">
 	  <thead class="thead-dark">
 	    <tr>
 	      <th scope="col">Issue ID</th>

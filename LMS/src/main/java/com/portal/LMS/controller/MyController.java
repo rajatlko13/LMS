@@ -50,6 +50,7 @@ public class MyController {
 	@RequestMapping(value={"/","/main"})
 	public String main()
 	{
+		calculateTotalDays();
 		return "main";
 	}
 	
