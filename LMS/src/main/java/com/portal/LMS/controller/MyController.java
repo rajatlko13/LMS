@@ -484,7 +484,7 @@ public class MyController {
 	public String returnBook(Model theModel)
 	{
 		Session currentSession = entityManager.unwrap(Session.class);
-		calculateTotalDays();
+		//calculateTotalDays();
 		Query<IssueBookHistory> query3 = currentSession.createQuery("from IssueBookHistory where returndate is null", IssueBookHistory.class);
 		List<IssueBookHistory> issueBookHistory = query3.getResultList();
 		theModel.addAttribute("issueBookHistory", issueBookHistory);
@@ -547,7 +547,7 @@ public class MyController {
 	public String userDetails(Model theModel)
 	{
 		Session currentSession = entityManager.unwrap(Session.class);
-		calculateTotalDays();
+		//calculateTotalDays();
 		Query<StudentDetails> query = currentSession.createQuery("from StudentDetails", StudentDetails.class);
 		List<StudentDetails> studentDetails = query.list();
 		theModel.addAttribute("studentDetails", studentDetails);
@@ -582,7 +582,7 @@ public class MyController {
 	public String individualBookDetails(Model theModel)
 	{
 		Session currentSession = entityManager.unwrap(Session.class);
-		calculateTotalDays();
+		//calculateTotalDays();
 		Query<BookDetails> query = currentSession.createQuery("from BookDetails", BookDetails.class);
 		List<BookDetails> bookDetails = query.list();
 		theModel.addAttribute("bookDetails", bookDetails);
@@ -786,7 +786,7 @@ public class MyController {
 	@Transactional
 	public String sendReminderMail(Model theModel)
 	{
-		calculateTotalDays();
+		//calculateTotalDays();
 		Session currentSession=entityManager.unwrap(Session.class);
 		Query<IssueBookHistory> query = currentSession.createQuery("from IssueBookHistory where returndate is null and totaldays>6", IssueBookHistory.class);
 		List<IssueBookHistory> issueBookHistory = query.getResultList();
