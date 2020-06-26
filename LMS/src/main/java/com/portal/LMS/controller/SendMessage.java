@@ -26,7 +26,7 @@ public class SendMessage {
 		
 	    // Sender's email ID and password needs to be mentioned
 	    final String from = "CentralInstituteLibrary@gmail.com";
-	    final String pass = "cli123321";
+	    final String pass = "cil123321";
 
 	    // Defining the gmail host
 	    String host = "smtp.gmail.com";
@@ -87,8 +87,8 @@ public class SendMessage {
 		String result="", subject ="Central Institute Library Book Reminder", messg="";
 	    
 	 // Sender's email ID and password needs to be mentioned
-	    final String from = "rajatlko13@gmail.com";
-	    final String pass = "humraj2018";
+	    final String from = "CentralInstituteLibrary@gmail.com";
+	    final String pass = "cil123321";
 
 	    // Defining the gmail host
 	    String host = "smtp.gmail.com";

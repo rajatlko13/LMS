@@ -48,6 +48,7 @@ public class MyController {
 	HttpServletResponse response;
 
 	@RequestMapping(value={"/","/main"})
+	@Transactional
 	public String main()
 	{
 		calculateTotalDays();
